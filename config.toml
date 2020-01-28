@@ -32,3 +32,6 @@ googleAnalytics = "UA-96088457-2"
         # style = "native"
         style = "dracula"
         tabWidth = 4
+
+    [markup.goldmark.renderer]
+        unsafe= true

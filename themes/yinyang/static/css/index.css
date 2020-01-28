@@ -49,7 +49,7 @@ a:hover {
 }
 
 .markdown-body pre {
-  background-color: #eaf1f8;
+  background-color: #e0f3f9;
 }
 
 .markdown-body .highlight pre,
@@ -60,7 +60,7 @@ a:hover {
 }
 
 .markdown-body code {
-  background-color: #d1e7ee;
+  background-color: #e0f3f9;
   font-size: 80%;
   padding: .2em .4em;
 }
@@ -207,6 +207,15 @@ a:hover {
   .post-content p {
     letter-spacing: 0.02em;
   }
+}
+
+.markdown-body blockquote {
+  border-left: .25em solid #1361ae;
+  color: #757677;
+  padding: 0 1em;
+  font-style: italic;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .releated-content {
