@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+echo -e "Building the site.."
+hugo
+
+read -t 60 -p "Do you want to deploy to production? (y/N) "
+echo    # Move to new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    now --prod public/
+else
+    now public/
+fi
