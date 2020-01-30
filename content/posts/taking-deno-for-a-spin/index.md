@@ -9,7 +9,7 @@ date = "2019-12-04"
 categories = [
     "Deno",
 ]
-menu = "main"
+draft = true
 +++
 
 I've been hearing about [Deno](https://github.com/denoland/deno) for quite a while in the dev circles, and decided it take it for a spin. But what's Deno anyway?
