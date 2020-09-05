@@ -184,8 +184,6 @@ a:hover {
 .row.post-desc {
   justify-content: center;
   color: #777777;
-  font-weight: 500;
-  font-size: 15px;
 }
 
 .post-category {
@@ -196,8 +194,9 @@ a:hover {
 }
 
 .post-date {
-  font-weight: 800;
   font-style: italic;
+  font-weight: 500;
+  font-size: 15px;
 }
 
 .post-author {
