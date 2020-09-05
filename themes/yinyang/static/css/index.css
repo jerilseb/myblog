@@ -184,6 +184,8 @@ a:hover {
 .row.post-desc {
   justify-content: center;
   color: #777777;
+  font-weight: 500;
+  font-size: 15px;
 }
 
 .post-category {
