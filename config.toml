@@ -10,12 +10,20 @@ googleAnalytics = "UA-96088457-2"
     disqus = "jeril-xyz"
 
     [[params.socials]]
-        name = "About Me"
-        link = "https://jeril.xyz"
-
-    [[params.socials]]
         name = "Github"
         link = "https://github.com/jerilseb"
+        icon = "images/github.png"
+
+    [[params.socials]]
+        name = "LinkedIn"
+        link = "https://www.linkedin.com/in/jer46/"
+        icon = "images/linkedin.png"
+
+
+    [[params.socials]]
+        name = "StackOverflow"
+        link = "https://stackoverflow.com/users/2219671/jeril-sebastian"
+        icon = "images/stackoverflow.png"
 
 [markup]
     [markup.highlight]

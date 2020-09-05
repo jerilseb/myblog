@@ -15,9 +15,9 @@ categories = [
 menu = "main"
 +++
 
-In this post, we are going to write a reasonably functional linux shell in Go. The source code for this project is hosted on github [here](https://github.com/jerilseb/gush).
+If you are a programmer, shells are an integral part of your daily life. Writing a shell from scratch is a great exercise to understand the workings of a shell. In this series, we are going to write a reasonably functional linux shell in Go. The source code for this project can be found on github [here](https://github.com/jerilseb/gush).
 
-To start off, let's create a REPL (Read, Evaluate, Print Loop) using an infinte for loop. This will allow us to type in commands to the shell. For now, we will read a line and just print it. As a shell prompt, we will print the shell name and give some flair to it using an [ANSI escape sequence](https://en.wikipedia.org/wiki/ANSI_escape_code). You can see all ANSI codes for controlling the terminal [here](http://ascii-table.com/ansi-escape-sequences.php).Create a file `main.go` with the following contents.
+In a nutshell, a shell is basically a command interpreter. You type in a command and the shell does something in response. So to start off, let's create a REPL (Read, Evaluate, Print Loop) using an infinte `for` loop. This will allow us to type in commands to the shell. For now, we will read a line and just print it. As a shell prompt, we will print the shell name and give some flair to it using an [ANSI escape sequence](https://en.wikipedia.org/wiki/ANSI_escape_code). You can see all ANSI codes for controlling the terminal [here](http://ascii-table.com/ansi-escape-sequences.php). Create a file `main.go` with the following contents.
 
 ```go
 package main
@@ -39,9 +39,9 @@ func main() {
 }
 ```
 
-If you run the program using `go run main.go`, you should see our shell prompt. Type in some text and press **Enter**. You'll see the text getting printed back to the console. Now try pressing the up arrow key. You'll see the terminal cursor jumping up a line and starting to overwrite the line. This is because, by default, your terminal starts in **canonical mode**. In this mode, the terminal is allowed to use control characters to change its cursor position. For a shell program, we need to stop this behaviour. You can exit the program by pressing `Ctrl + C`.
+If you run the program using `go run main.go`, you should see our shell prompt. Type in some text and press **Enter**. You'll see the text getting printed back to the console. Now try pressing the up arrow key. You'll see the terminal cursor jumping up a line and starting to overwrite the line. This is because, by default, your terminal starts in **canonical mode** (_also known as **cooked** mode_). In this mode, any input we type into the terminal is immediately echoed back onto the terminal and is only sent to the program when the `Enter` key is pressed. For a shell program, we need to have  control over each keystroke. You can exit the program by pressing `Ctrl + C`.
 
-To gain more control over the terminal, we have to change our terminal mode into something known as the [Raw Mode](https://en.wikipedia.org/wiki/Terminal_mode). In this mode, we get very fine control over the terminal. You can read more about entering raw mode [here](https://viewsourcecode.org/snaptoken/kilo/02.enteringRawMode.html). As of this writing, Go doesn't have any builtin way of changing the terminal's mode. But we can use [cgo](https://golang.org/cmd/cgo/) and some C code to achieve this. Let's create a file called `rawmode.c` as shown below
+To gain more control over the terminal, we have to change our terminal mode into something known as the [Raw Mode](https://en.wikipedia.org/wiki/Terminal_mode). In this mode, we get very fine control over the terminal. You can read more about entering raw mode [here](https://viewsourcecode.org/snaptoken/kilo/02.enteringRawMode.html). As of this writing, Go doesn't have any builtin way of changing the terminal's mode. But the good news is that all modern Unix systems come with an API called [termios](https://en.wikibooks.org/wiki/Serial_Programming/termios) for controlling terminal I/O, which is exposed through the C header file `termios.h`. So for changing modes, we can write some C code and call it from Go using [cgo](https://golang.org/cmd/cgo/). Let's create a file called `rawmode.c` as shown below
 ```c
 ‏‏‎ ‎#include <stdlib.h>
 ‏‏‎ ‎#include <termios.h>
@@ -112,7 +112,7 @@ func main() {
 }
 ```
 
-You can build and run the program using `go build`. Let's create a Makefile to make our build process easier. Below is simple Makefile which can be used for building any go program.
+You can build and run the program using `go build`. Also, let's create a Makefile to make our build process easier. If you are unfamiliar with Makefiles, [here](https://opensource.com/article/18/8/what-how-makefile) is a handy primer. Below is simple Makefile which can be used for building any go program.
 
 ```makefile
 GOCMD=go

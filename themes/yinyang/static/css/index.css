@@ -121,13 +121,13 @@ a:hover {
   font-size: 1.2rem;
 }
 
-.posts-title-text {
+/* .posts-title-text {
   transition: transform .1s ease-in-out;
 }
 
 .posts-title-text:hover {
   transform: translateX(8px) scale(1.04);
-}
+} */
 
 .posts-line {
   margin: 12px 0;
@@ -149,7 +149,7 @@ a:hover {
   margin-bottom: 80px;
   display: flex;
   justify-content: flex-end;
-  padding: 12px 0;
+  padding: 10px 0;
   border-width: 3px;
   border-style: solid none;
   border-color: #000;
