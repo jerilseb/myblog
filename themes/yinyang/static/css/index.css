@@ -211,7 +211,7 @@ a:hover {
 .post-content p {
   hyphens: auto;
   line-height: 1.5;
-  text-align: justify;
+  /* text-align: justify; */
   text-justify: ideographic;
   margin-bottom: 1em;
 }
