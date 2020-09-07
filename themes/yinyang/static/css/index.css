@@ -113,7 +113,7 @@ a:hover {
 /* posts list */
 
 #posts-list {
-  min-height: 80%;
+  min-height: calc(100vh - 280px);
 }
 
 .posts-date,
@@ -146,10 +146,10 @@ a:hover {
 
 .site-footer {
   margin-top: 50px;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   display: flex;
   justify-content: flex-end;
-  padding: 10px 0;
+  padding: 8px 0;
   border-width: 3px;
   border-style: solid none;
   border-color: #000;
