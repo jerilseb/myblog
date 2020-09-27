@@ -177,7 +177,7 @@ a:hover {
   font-size: 2.5rem;
   font-weight: 500;
   margin-bottom: 18px;
-  margin-top: 20px;
+  margin-top: 18px;
   text-align: center;
 }
 
@@ -265,6 +265,7 @@ a:hover {
 .gallery-img span {
   text-align: center;
 }
+
 .gallery-img-desc {
   font-size: 0.8em;
   font-weight: 800;
