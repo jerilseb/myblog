@@ -1,8 +1,15 @@
 #!/usr/bin/env bash
+echo -e "Removing public/"
+rm -rf public/
 
 echo -e "Building the site.."
-docker build . -t myblog_deploy
-docker run --rm -v $(pwd):/app myblog_deploy build
+docker container run --rm \
+    -v $(pwd):/app \
+    -w /app \
+    -u $(id -u ${USER}):$(id -g ${USER}) \
+    klakegg/hugo:0.82.0-ubuntu build
+
+cp -a quick-files/. public/
 
 read -t 60 -p "Do you want to deploy to production? (y/N) "
 echo    # Move to new line
