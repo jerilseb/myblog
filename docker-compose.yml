@@ -2,9 +2,11 @@ version: '3.8'
 
 services:
     app:
-        build: .
+        image: klakegg/hugo:0.82.0-ubuntu
         container_name: myblog
+        working_dir: /app
         volumes:
             - .:/app
         ports:
             - 8000:1313
+        command: server .
