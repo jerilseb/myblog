@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 echo -e "Building the site.."
-hugo
+docker build . -t myblog_deploy
+docker run --rm -v $(pwd):/app myblog_deploy build
 
 read -t 60 -p "Do you want to deploy to production? (y/N) "
 echo    # Move to new line

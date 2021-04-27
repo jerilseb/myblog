@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+    app:
+        build: .
+        container_name: myblog
+        volumes:
+            - .:/app
+        ports:
+            - 8000:1313
