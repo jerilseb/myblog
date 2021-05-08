@@ -1,13 +1,13 @@
-"set mouse=a
 set ignorecase
 set smartcase
 set encoding=UTF-8
 set foldmethod=marker
 set updatetime=500
-set signcolumn=number
 set shiftwidth=4
 set tabstop=4
 set expandtab
+"set signcolumn=number
+"set mouse=a
 
 colorscheme murphy
 "colorscheme slate
