@@ -1,0 +1,38 @@
+// Settings
+{
+    "editor.copyWithSyntaxHighlighting": false,
+    "files.trimFinalNewlines": false,
+    "files.trimTrailingWhitespace": false,
+    "editor.minimap.enabled": false,
+    "editor.mouseWheelZoom": true,
+    "explorer.openEditors.visible": 0,
+    "editor.detectIndentation": false,
+    "workbench.panel.defaultLocation": "right",
+    "workbench.editor.enablePreview": false,
+    "window.newWindowDimensions": "maximized",
+    "breadcrumbs.enabled": false,
+    "editor.lineHeight": 20,
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.activityBar.visible": false,
+}
+
+// Keybindings
+[
+    {
+        "key": "ctrl+;",
+        "command": "cursorEnd",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+space",
+        "command": "cursorMove",
+        "args": {
+            "to": "right"
+        },
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+b",
+        "command": "workbench.action.toggleActivityBarVisibility"
+    },
+]
