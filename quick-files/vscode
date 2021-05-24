@@ -35,4 +35,8 @@
         "key": "ctrl+shift+b",
         "command": "workbench.action.toggleActivityBarVisibility"
     },
+    {
+        "key": "ctrl+e",
+        "command": "-workbench.action.quickOpen"
+    }
 ]
