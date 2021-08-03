@@ -15,20 +15,6 @@ alias dca="docker container ls -a"
 alias drr="docker run --rm"
 alias dco="docker-compose"
 
-function dis() {
-    if ! command -v jq &> /dev/null
-    then
-        echo "jq not found"
-        exit
-    fi
-
-    if (( $# > 1 )); then
-        docker inspect $1 | jq ".[0].$2"
-    else
-        docker inspect $1 | jq ".[0]"
-    fi
-}
-
 # Git aliases
 alias gs='git status'
 alias gb='git branch '
