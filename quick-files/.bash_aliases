@@ -4,15 +4,17 @@ alias l='ls -lh'
 alias ll='ls -alh'
 
 alias stl="sudo systemctl"
+alias jtl="sudo journalctl"
 
 # Docker aliases
 alias dc='docker container'
 alias di='docker image'
 alias dl='docker logs'
 alias dn='docker network'
-alias de='docker exec -it'
+alias dx='docker exec -it'
 alias dca="docker container ls -a"
 alias drr="docker run --rm"
+alias dis="docker inspect"
 alias dco="docker-compose"
 
 # Git aliases
