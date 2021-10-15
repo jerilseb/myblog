@@ -15,7 +15,7 @@ alias dx='docker exec -it'
 alias dca="docker container ls -a"
 alias drr="docker run --rm"
 alias dis="docker inspect"
-alias dco="docker-compose"
+alias dco="docker compose"
 
 # Git aliases
 alias gs='git status'
@@ -37,5 +37,25 @@ function build_prompt() {
     cyan='\[\e[1;36m\]'
     reset='\[\e[0m\]'
 
-    PS1="${red}PLATFORM-PRODUCTION $reset[\w] \$ "
+    PS1="${red}server-name $reset[\w] \$ "
+}
+
+function get_git_branch() {
+        git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+}
+
+function gpl() {
+        branch=$(get_git_branch)
+        echo "Pulling from $branch"
+        git pull origin $branch
+}
+
+function gac () {
+        git add .
+        sum=""
+        space=" "
+        for i do
+            sum=$sum$space$i
+        done
+        git commit -m "${sum}"
 }
